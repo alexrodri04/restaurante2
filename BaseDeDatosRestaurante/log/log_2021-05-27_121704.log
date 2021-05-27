@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-05-27T10:17:04.506540Z</date>
+  <millis>1622110624506</millis>
+  <nanos>540000</nanos>
+  <sequence>18</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>logging.MyLogger</class>
+  <method>setup</method>
+  <thread>1</thread>
+  <message>Logger is configured</message>
+</record>
+<record>
+  <date>2021-05-27T10:17:04.508549900Z</date>
+  <millis>1622110624508</millis>
+  <nanos>549900</nanos>
+  <sequence>19</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>jdbc.JDBCManager</class>
+  <method>connect</method>
+  <thread>1</thread>
+  <message>Se ha establecido la conexión con la BD</message>
+</record>
+<record>
+  <date>2021-05-27T10:17:04.509538700Z</date>
+  <millis>1622110624509</millis>
+  <nanos>538700</nanos>
+  <sequence>20</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchJefes</method>
+  <thread>1</thread>
+  <message>Jefe: ID: 1 Nombre: Daniel</message>
+</record>
+<record>
+  <date>2021-05-27T10:17:04.509538700Z</date>
+  <millis>1622110624509</millis>
+  <nanos>538700</nanos>
+  <sequence>21</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchJefes</method>
+  <thread>1</thread>
+  <message>Jefe: ID: 2 Nombre: Alejandro</message>
+</record>
+<record>
+  <date>2021-05-27T10:17:04.510537900Z</date>
+  <millis>1622110624510</millis>
+  <nanos>537900</nanos>
+  <sequence>22</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchJefes</method>
+  <thread>1</thread>
+  <message>Jefe: ID: 3 Nombre: Ignacio</message>
+</record>
+<record>
+  <date>2021-05-27T10:17:04.510537900Z</date>
+  <millis>1622110624510</millis>
+  <nanos>537900</nanos>
+  <sequence>23</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchJefes</method>
+  <thread>1</thread>
+  <message>Jefe: ID: 4 Nombre: Daniel</message>
+</record>
+<record>
+  <date>2021-05-27T10:17:04.510537900Z</date>
+  <millis>1622110624510</millis>
+  <nanos>537900</nanos>
+  <sequence>24</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchJefes</method>
+  <thread>1</thread>
+  <message>Jefe: ID: 5 Nombre: Alejandro</message>
+</record>
+<record>
+  <date>2021-05-27T10:17:04.510537900Z</date>
+  <millis>1622110624510</millis>
+  <nanos>537900</nanos>
+  <sequence>25</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchJefes</method>
+  <thread>1</thread>
+  <message>Jefe: ID: 6 Nombre: Ignacio</message>
+</record>
+<record>
+  <date>2021-05-27T10:17:06.704687100Z</date>
+  <millis>1622110626704</millis>
+  <nanos>687100</nanos>
+  <sequence>26</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 16</message>
+</record>

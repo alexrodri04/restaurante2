@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-05-27T10:14:56.445957700Z</date>
+  <millis>1622110496445</millis>
+  <nanos>957700</nanos>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>logging.MyLogger</class>
+  <method>setup</method>
+  <thread>1</thread>
+  <message>Logger is configured</message>
+</record>
+<record>
+  <date>2021-05-27T10:14:57.481772400Z</date>
+  <millis>1622110497481</millis>
+  <nanos>772400</nanos>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>jdbc.JDBCManager</class>
+  <method>connect</method>
+  <thread>1</thread>
+  <message>Se ha establecido la conexión con la BD</message>
+</record>
+<record>
+  <date>2021-05-27T10:14:57.503750Z</date>
+  <millis>1622110497503</millis>
+  <nanos>750000</nanos>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>ArchiveFactoryImpl</class>
+  <method>createArchive</method>
+  <thread>1</thread>
+  <message>ENTRY file:/C:/Users/alex/git/BasesDatosRestaurante/BaseDeDatosRestaurante/bin/ META-INF/persistence.xml</message>
+</record>
+<record>
+  <date>2021-05-27T10:14:57.504749300Z</date>
+  <millis>1622110497504</millis>
+  <nanos>749300</nanos>
+  <sequence>3</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>ArchiveFactoryImpl</class>
+  <method>createArchive</method>
+  <thread>1</thread>
+  <message>protocol = file</message>
+</record>
+<record>
+  <date>2021-05-27T10:14:57.512744600Z</date>
+  <millis>1622110497512</millis>
+  <nanos>744600</nanos>
+  <sequence>4</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>DirectoryArchive</class>
+  <method>DirectoryArchive</method>
+  <thread>1</thread>
+  <message>ENTRY C:\Users\alex\git\BasesDatosRestaurante\BaseDeDatosRestaurante\bin</message>
+</record>
+<record>
+  <date>2021-05-27T10:14:57.512744600Z</date>
+  <millis>1622110497512</millis>
+  <nanos>744600</nanos>
+  <sequence>5</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>DirectoryArchive</class>
+  <method>DirectoryArchive</method>
+  <thread>1</thread>
+  <message>rootURL = file:/C:/Users/alex/git/BasesDatosRestaurante/BaseDeDatosRestaurante/bin/</message>
+</record>
+<record>
+  <date>2021-05-27T10:14:57.516742400Z</date>
+  <millis>1622110497516</millis>
+  <nanos>742400</nanos>
+  <sequence>6</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>ArchiveFactoryImpl</class>
+  <method>createArchive</method>
+  <thread>1</thread>
+  <message>RETURN DirectoryArchive(file:/C:/Users/alex/git/BasesDatosRestaurante/BaseDeDatosRestaurante/bin/)</message>
+</record>
+<record>
+  <date>2021-05-27T10:14:57.687034Z</date>
+  <millis>1622110497687</millis>
+  <nanos>34000</nanos>
+  <sequence>7</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>ArchiveFactoryImpl</class>
+  <method>createArchive</method>
+  <thread>1</thread>
+  <message>ENTRY file:/C:/Users/alex/git/BasesDatosRestaurante/BaseDeDatosRestaurante/bin/ null</message>
+</record>
+<record>
+  <date>2021-05-27T10:14:57.687034Z</date>
+  <millis>1622110497687</millis>
+  <nanos>34000</nanos>
+  <sequence>8</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>ArchiveFactoryImpl</class>
+  <method>createArchive</method>
+  <thread>1</thread>
+  <message>protocol = file</message>
+</record>
+<record>
+  <date>2021-05-27T10:14:57.687034Z</date>
+  <millis>1622110497687</millis>
+  <nanos>34000</nanos>
+  <sequence>9</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>DirectoryArchive</class>
+  <method>DirectoryArchive</method>
+  <thread>1</thread>
+  <message>ENTRY C:\Users\alex\git\BasesDatosRestaurante\BaseDeDatosRestaurante\bin</message>
+</record>
+<record>
+  <date>2021-05-27T10:14:57.687034Z</date>
+  <millis>1622110497687</millis>
+  <nanos>34000</nanos>
+  <sequence>10</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>DirectoryArchive</class>
+  <method>DirectoryArchive</method>
+  <thread>1</thread>
+  <message>rootURL = file:/C:/Users/alex/git/BasesDatosRestaurante/BaseDeDatosRestaurante/bin/</message>
+</record>
+<record>
+  <date>2021-05-27T10:14:57.691031600Z</date>
+  <millis>1622110497691</millis>
+  <nanos>31600</nanos>
+  <sequence>11</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>ArchiveFactoryImpl</class>
+  <method>createArchive</method>
+  <thread>1</thread>
+  <message>RETURN DirectoryArchive(file:/C:/Users/alex/git/BasesDatosRestaurante/BaseDeDatosRestaurante/bin/)</message>
+</record>
+<record>
+  <date>2021-05-27T10:14:57.691031600Z</date>
+  <millis>1622110497691</millis>
+  <nanos>31600</nanos>
+  <sequence>12</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>ArchiveFactoryImpl</class>
+  <method>createArchive</method>
+  <thread>1</thread>
+  <message>ENTRY file:/C:/Users/alex/git/BasesDatosRestaurante/BaseDeDatosRestaurante/bin/ null</message>
+</record>
+<record>
+  <date>2021-05-27T10:14:57.691031600Z</date>
+  <millis>1622110497691</millis>
+  <nanos>31600</nanos>
+  <sequence>13</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>ArchiveFactoryImpl</class>
+  <method>createArchive</method>
+  <thread>1</thread>
+  <message>protocol = file</message>
+</record>
+<record>
+  <date>2021-05-27T10:14:57.691031600Z</date>
+  <millis>1622110497691</millis>
+  <nanos>31600</nanos>
+  <sequence>14</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>DirectoryArchive</class>
+  <method>DirectoryArchive</method>
+  <thread>1</thread>
+  <message>ENTRY C:\Users\alex\git\BasesDatosRestaurante\BaseDeDatosRestaurante\bin</message>
+</record>
+<record>
+  <date>2021-05-27T10:14:57.692031600Z</date>
+  <millis>1622110497692</millis>
+  <nanos>31600</nanos>
+  <sequence>15</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>DirectoryArchive</class>
+  <method>DirectoryArchive</method>
+  <thread>1</thread>
+  <message>rootURL = file:/C:/Users/alex/git/BasesDatosRestaurante/BaseDeDatosRestaurante/bin/</message>
+</record>
+<record>
+  <date>2021-05-27T10:14:57.695029600Z</date>
+  <millis>1622110497695</millis>
+  <nanos>29600</nanos>
+  <sequence>16</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>ArchiveFactoryImpl</class>
+  <method>createArchive</method>
+  <thread>1</thread>
+  <message>RETURN DirectoryArchive(file:/C:/Users/alex/git/BasesDatosRestaurante/BaseDeDatosRestaurante/bin/)</message>
+</record>
+<record>
+  <date>2021-05-27T10:15:01.999549900Z</date>
+  <millis>1622110501999</millis>
+  <nanos>549900</nanos>
+  <sequence>17</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.menu</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 1</message>
+</record>
+<record>
+  <date>2021-05-27T10:15:25.025537500Z</date>
+  <millis>1622110525025</millis>
+  <nanos>537500</nanos>
+  <sequence>18</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.menu</class>
+  <method>registrarse</method>
+  <thread>1</thread>
+  <message>Usuario [id=null, email=pepe@a.es, rol=Rol [id=2, nombre=admin]]</message>
+</record>
+<record>
+  <date>2021-05-27T10:15:25.082503800Z</date>
+  <millis>1622110525082</millis>
+  <nanos>503800</nanos>
+  <sequence>19</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.menu</class>
+  <method>registrarse</method>
+  <thread>1</thread>
+  <message>Usuario [id=3, email=pepe@a.es, rol=Rol [id=2, nombre=admin]]</message>
+</record>
+<record>
+  <date>2021-05-27T10:15:28.973941400Z</date>
+  <millis>1622110528973</millis>
+  <nanos>941400</nanos>
+  <sequence>20</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.menu</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 2</message>
+</record>
+<record>
+  <date>2021-05-27T10:15:39.006080700Z</date>
+  <millis>1622110539006</millis>
+  <nanos>80700</nanos>
+  <sequence>21</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>logging.MyLogger</class>
+  <method>setup</method>
+  <thread>1</thread>
+  <message>Logger is configured</message>
+</record>
+<record>
+  <date>2021-05-27T10:15:39.015064700Z</date>
+  <millis>1622110539015</millis>
+  <nanos>64700</nanos>
+  <sequence>22</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>jdbc.JDBCManager</class>
+  <method>connect</method>
+  <thread>1</thread>
+  <message>Se ha establecido la conexión con la BD</message>
+</record>
+<record>
+  <date>2021-05-27T10:15:39.017063700Z</date>
+  <millis>1622110539017</millis>
+  <nanos>63700</nanos>
+  <sequence>23</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchJefes</method>
+  <thread>1</thread>
+  <message>Jefe: ID: 1 Nombre: Daniel</message>
+</record>
+<record>
+  <date>2021-05-27T10:15:39.017063700Z</date>
+  <millis>1622110539017</millis>
+  <nanos>63700</nanos>
+  <sequence>24</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchJefes</method>
+  <thread>1</thread>
+  <message>Jefe: ID: 2 Nombre: Alejandro</message>
+</record>
+<record>
+  <date>2021-05-27T10:15:39.017063700Z</date>
+  <millis>1622110539017</millis>
+  <nanos>63700</nanos>
+  <sequence>25</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchJefes</method>
+  <thread>1</thread>
+  <message>Jefe: ID: 3 Nombre: Ignacio</message>
+</record>
+<record>
+  <date>2021-05-27T10:15:39.018063100Z</date>
+  <millis>1622110539018</millis>
+  <nanos>63100</nanos>
+  <sequence>26</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchJefes</method>
+  <thread>1</thread>
+  <message>Jefe: ID: 4 Nombre: Daniel</message>
+</record>
+<record>
+  <date>2021-05-27T10:15:39.018063100Z</date>
+  <millis>1622110539018</millis>
+  <nanos>63100</nanos>
+  <sequence>27</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchJefes</method>
+  <thread>1</thread>
+  <message>Jefe: ID: 5 Nombre: Alejandro</message>
+</record>
+<record>
+  <date>2021-05-27T10:15:39.018063100Z</date>
+  <millis>1622110539018</millis>
+  <nanos>63100</nanos>
+  <sequence>28</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchJefes</method>
+  <thread>1</thread>
+  <message>Jefe: ID: 6 Nombre: Ignacio</message>
+</record>
+<record>
+  <date>2021-05-27T10:15:45.705585200Z</date>
+  <millis>1622110545705</millis>
+  <nanos>585200</nanos>
+  <sequence>29</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 13</message>
+</record>
+<record>
+  <date>2021-05-27T10:15:45.706584900Z</date>
+  <millis>1622110545706</millis>
+  <nanos>584900</nanos>
+  <sequence>30</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchCargos</method>
+  <thread>1</thread>
+  <message>Cargo: ID: 1 Nombre: Informatico Jefe: 1</message>
+</record>
+<record>
+  <date>2021-05-27T10:15:45.706584900Z</date>
+  <millis>1622110545706</millis>
+  <nanos>584900</nanos>
+  <sequence>31</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchCargos</method>
+  <thread>1</thread>
+  <message>Cargo: ID: 2 Nombre: Cocinero Jefe: 2</message>
+</record>
+<record>
+  <date>2021-05-27T10:15:45.706584900Z</date>
+  <millis>1622110545706</millis>
+  <nanos>584900</nanos>
+  <sequence>32</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchCargos</method>
+  <thread>1</thread>
+  <message>Cargo: ID: 3 Nombre: Repartidor Jefe: 3</message>
+</record>
+<record>
+  <date>2021-05-27T10:15:45.707584600Z</date>
+  <millis>1622110545707</millis>
+  <nanos>584600</nanos>
+  <sequence>33</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchCargos</method>
+  <thread>1</thread>
+  <message>Cargo: ID: 4 Nombre: Informatico Jefe: 1</message>
+</record>
+<record>
+  <date>2021-05-27T10:15:45.707584600Z</date>
+  <millis>1622110545707</millis>
+  <nanos>584600</nanos>
+  <sequence>34</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchCargos</method>
+  <thread>1</thread>
+  <message>Cargo: ID: 5 Nombre: Cocinero Jefe: 2</message>
+</record>
+<record>
+  <date>2021-05-27T10:15:45.707584600Z</date>
+  <millis>1622110545707</millis>
+  <nanos>584600</nanos>
+  <sequence>35</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchCargos</method>
+  <thread>1</thread>
+  <message>Cargo: ID: 6 Nombre: Repartidor Jefe: 3</message>
+</record>
+<record>
+  <date>2021-05-27T10:16:13.010529400Z</date>
+  <millis>1622110573010</millis>
+  <nanos>529400</nanos>
+  <sequence>36</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 16</message>
+</record>
+<record>
+  <date>2021-05-27T10:16:44.307464200Z</date>
+  <millis>1622110604307</millis>
+  <nanos>464200</nanos>
+  <sequence>37</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.menu</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 0</message>
+</record>
+</log>
