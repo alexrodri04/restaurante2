@@ -144,7 +144,7 @@ public class MenuCliente {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		} while (respuesta == ("s"));
+		} while (respuesta =="s");
 		System.out.println("Introduzca una dirección de entrega: \n");
 		try {
 			direccion = reader.readLine();

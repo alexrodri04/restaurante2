@@ -91,7 +91,6 @@ public class MenuServidor {
 				addEmpleado();
 				break;
 			case 2:
-				//mostrarEmpleados(); la otra mola mas
 				mostrarEmpleados2();
 				break;
 			case 3:
@@ -130,8 +129,10 @@ public class MenuServidor {
 				break;
 			case 14:
 				updateEmpleado();
+				break;
 			case 15:
 				addMenu();
+				break;
 			case 16:
 				funcionXML();
 				break;
@@ -168,10 +169,10 @@ public class MenuServidor {
 			else {
 			System.out.println("Nuevo Sueldo: ");
 			int sueldo = Integer.parseInt(reader.readLine());
-			Empleados empleado = (Empleados) dbman.searchEmpleadoByNombre(nombre);
+			Empleados empleado = dbman.searchEmpleadoByNombre(nombre).get(0);
 			int id = empleado.getId();
 			dbman.actualizarEmpleado(id, sueldo);
-			System.out.println("Sueldo actualizado con exito: ");
+			System.out.println("Sueldo actualizado con exito ");
 		} }catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -243,8 +244,7 @@ public class MenuServidor {
 			float coste = Float.parseFloat(reader.readLine());
 			System.out.println("Direccion: ");
 			String direccion = reader.readLine();
-			System.out.println("Hora: ");
-			LocalDate hora = LocalDate.parse(reader.readLine(),formattertime);
+			LocalDate hora = LocalDate.now();
 			System.out.println("RepartidorId: ");
 			int id_repartidor = Integer.parseInt(reader.readLine());
 			Pedidos pedido = new Pedidos(cliente_id,coste,direccion,Date.valueOf(hora),id_repartidor);
