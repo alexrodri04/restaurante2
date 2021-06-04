@@ -28,7 +28,9 @@ public interface DBManager {
 	public List<Clientes> searchClientes();
 
 	public List<Pedidos> searchPedidos();
-
+	
+	public Pedidos searchUltimoPedido();
+	
 	public void addPedido(Pedidos pedido);
 
 	public List<Menus> searchMenu();

@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.sql.Date;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +25,7 @@ public class MenuCliente {
 	private static DBManager dbman = new JDBCManager();
 	private static ManagerJPA userman = new UsuarioManager();
 	private static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-	
+	private final static DateTimeFormatter formatterSesion = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 
 	public static void main(Clientes usuario) {
 		try {
@@ -116,49 +117,60 @@ public class MenuCliente {
 	}
 	
 	private static void añadirAlPedido(Clientes usuario) {
-		String respuesta = "s";
+		int respuesta = 1;
 		ArrayList<Menus> menus = new ArrayList<Menus>();
 		
 		float coste = 0;
 		String direccion;
-		LocalDate hora = LocalDate.now(); 
+		LocalDate hora = LocalDate.now();
 		direccion = " ";
-		Pedidos pedido = new Pedidos(usuario.getId(),coste,direccion,Date.valueOf(hora), 3, menus);
-		do {
-			mostrarMenu();
+		Pedidos pedido = new Pedidos(usuario.getId(), coste, direccion, Date.valueOf(hora), 3);
+		 while (respuesta == 1) {
+					mostrarMenu();
 			System.out.println("Seleccione el nombre de un plato: ");
 			try {
 				String plato = reader.readLine();
 				Menus menu = dbman.searchMenuByNombre(plato);
+				System.out.println(menu);
 				menus.add(menu);
 				coste = coste + menu.getPrecio();
-				dbman.addPedido_Menu(pedido,menu);
+				System.out.println(coste);
 			} catch (IOException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-			System.out.println("Desea pedir algo mas?(s/n)");
-			try {
-				respuesta = reader.readLine();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		} while (respuesta =="s");
+				System.out.println("Desea pedir algo mas?(SI = 1 / NO = 0)");
+				try {
+					respuesta = Integer.parseInt(reader.readLine());
+					if (respuesta == 0) {
+						break;
+					}
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+					}
+				}
 		System.out.println("Introduzca una dirección de entrega: \n");
 		try {
 			direccion = reader.readLine();
 			pedido.setDireccion(direccion);
 			pedido.setCoste(coste);
-			pedido.setMenu(menus);
+			
 			//System.out.println("Indutroduzca la Hora: ");
 			//LocalDate time = LocalDate.now();
 			//hora = LocalDate.parse(time, formattertime);
 			//pedido = new Pedidos(usuario.getId(),coste,direccion,Date.valueOf(time), 3, menus);
 			dbman.addPedido(pedido);
+			pedido = dbman.searchUltimoPedido();
+			for(int i=0; i<menus.size(); i++) {
+					dbman.addPedido_Menu(pedido, menus.get(i));
+			}
+			pedido.setMenu(menus);
+			System.out.println(pedido);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			
 		}
 		
 	}

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<empleado id="1">
+    <nombre>Alejandro</nombre>
+    <salario>1000</salario>
+    <cargoId>1</cargoId>
+</empleado>

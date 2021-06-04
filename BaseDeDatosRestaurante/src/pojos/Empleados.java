@@ -1,10 +1,27 @@
 package pojos;
 
+import java.io.Serializable;
 
-public class Empleados {
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+
+@XmlRootElement(name = "empleado")
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(propOrder = { "nombre", "salario", "cargoId" })
+public class Empleados  implements Serializable{
+	
+	private static final long serialVersionUID = 8348912392169638115L;
+	@XmlAttribute
 	private int id;
+	@XmlElement
 	private String nombre;
+	@XmlElement
 	private int salario;
+	@XmlElement
 	private int cargoId;
 	
 	public Empleados() {

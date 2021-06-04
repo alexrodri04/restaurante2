@@ -17,7 +17,7 @@ public class XML {
 		JAXBContext jaxbC = JAXBContext.newInstance(Empleados.class);
 		Marshaller jaxbM = jaxbC.createMarshaller();
 		jaxbM.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT,Boolean.TRUE);
-		File XMLfile = new File("Empleado.xml");
+		File XMLfile = new File("./xml/Empleado.xml");
 		jaxbM.marshal(empleado, XMLfile);
 		jaxbM.marshal(empleado, System.out);
 	}
@@ -25,7 +25,7 @@ public class XML {
 	public static void unmarshallingEmpleados() throws JAXBException {
 		JAXBContext jaxbC = JAXBContext.newInstance(Empleados.class);
 		Unmarshaller jaxbU = jaxbC.createUnmarshaller();
-		File XMLfile2 = new File("Empleado.xml");
+		File XMLfile2 = new File("./xml/Empleado.xml");
 		Empleados empleado2 = (Empleados)jaxbU.unmarshal(XMLfile2);
 		System.out.println(empleado2);
 	}
@@ -35,7 +35,7 @@ public class XML {
 		JAXBContext jaxbC = JAXBContext.newInstance(Cargos.class);
 		Marshaller jaxbM = jaxbC.createMarshaller();
 		jaxbM.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT,Boolean.TRUE);
-		File XMLfile = new File("Puesto.xml");
+		File XMLfile = new File("Cargo.xml");
 		jaxbM.marshal(cargo, XMLfile);
 		jaxbM.marshal(cargo, System.out);
 	}
@@ -43,7 +43,7 @@ public class XML {
 public static void unmarshallingCargos() throws JAXBException {
 		JAXBContext jaxbC = JAXBContext.newInstance(Cargos.class);
 		Unmarshaller jaxbU = jaxbC.createUnmarshaller();
-		File XMLfile2 = new File("Puesto.xml");
+		File XMLfile2 = new File("Cargo.xml");
 		Cargos cargo2 = (Cargos)jaxbU.unmarshal(XMLfile2);
 		System.out.println(cargo2);
 	}

@@ -103,6 +103,7 @@ public class MenuServidor {
 				mostrarClientes();
 				break;
 			case 6:
+				mostrarClientes();
 				eliminarCliente();
 				break;
 			case 7:
@@ -411,7 +412,6 @@ public class MenuServidor {
 	}
 	
 	private static void eliminarCliente() {
-		mostrarMenu();
 		System.out.println("Introduzca nombre del cliente:");
 		try {
 			String nombreCliente = reader.readLine();

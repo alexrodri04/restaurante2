@@ -1,8 +1,13 @@
 package pojos;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Menus {
+public class Menus implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int id;
 	private String plato;
 	private float precio;

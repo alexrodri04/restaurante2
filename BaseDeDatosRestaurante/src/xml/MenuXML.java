@@ -48,7 +48,7 @@ public class MenuXML {
 						}
 						break;
 					}
-					else if (eleccion.equalsIgnoreCase("puestos")){
+					else if (eleccion.equalsIgnoreCase("cargos")){
 						try {
 						XML.unmarshallingCargos();
 						}catch(Exception e) {
@@ -65,6 +65,12 @@ public class MenuXML {
 				System.out.println("Para realizar esta operación debe haber realizado una operacion de Marshalling de Empleado previamente");
 				}
 				break;
+			case 4: 
+				try {
+					Xpath.main(null);
+				}catch(Exception e) {
+					
+				}
 
 			default:
 				System.out.println("Indroduzca un numero valido");

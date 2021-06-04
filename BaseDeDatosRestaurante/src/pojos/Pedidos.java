@@ -1,16 +1,30 @@
 package pojos;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.ArrayList;
 
-public class Pedidos {
+import javax.persistence.Column;
+import javax.persistence.*;
+@Entity
+@Table(name="Pedidos")
+public class Pedidos implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id
+	@Column(name="Id")
 	private int id;
+	@Column(name="cliente_id")
 	private int cliente_id;
+	@Column(name="coste")
 	private float coste;
 	private String direccion;
 	private Date hora;
 	private int id_repartidor;
+	@ManyToMany(mappedBy = "Menus")
 	private ArrayList<Menus> menu;
 	
 	public Pedidos() {
@@ -106,7 +120,7 @@ public class Pedidos {
 	}
 	
 	public String toString() {
-		String string ="ID: "+ getId()+ " Cliente_id: "+ getClienteId()+ "Coste: "+getCoste()+ "Direccion: "+getDireccion()+"Hora: "+getHora()+"Repartidor: "+getRepartidor()+"\n";
+		String string ="ID: "+ getId() + " Cliente_id: "+ getClienteId() + " Coste: " + getCoste() + " Direccion: " + getDireccion() + " Date: "+ getHora() + " Repartidor: " + getRepartidor() +"\n" + "menu: " + getMenu() ;
 		return string;
 	}
 }

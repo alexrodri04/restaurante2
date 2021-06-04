@@ -45,8 +45,9 @@ public class JDBCManager implements DBManager{
 	private final String searchMenuByNombre = "SELECT * FROM Menus WHERE Plato = ?;";
 	private final String eliminarEmpleado = "DELETE FROM Empleados WHERE Nombre LIKE ?;";
 	private final String eliminarMenu = "DELETE FROM Menus WHERE Plato LIKE ?;";
-	private final String eliminarCliente = "DELETE FROM Clientes WHERE Nombre"+ " LIKE ?;";
-	private final String updateEmpleado = "UPDATE Empleados SET salario =? WHERE id =?";
+	private final String eliminarCliente = "DELETE FROM Clientes WHERE Nombre LIKE ?;";
+	private final String updateEmpleado = "UPDATE Empleados SET salario =? WHERE Id =?;";
+	private final String ultimoPedido = "SELECT * FROM Pedidos ORDER BY ID DESC LIMIT 1;";
 	private Connection c;
 	
 	
@@ -342,6 +343,30 @@ public class JDBCManager implements DBManager{
 		return pedidos;
 		
 	}
+	public Pedidos searchUltimoPedido() {
+		Pedidos pedido = new Pedidos();
+		try {
+			Statement stmt = c.createStatement();
+			ResultSet rs = stmt.executeQuery(ultimoPedido);
+			while(rs.next()){
+				int id = rs.getInt("Id");
+				int cliente_id = rs.getInt("Cliente_Id");
+				float coste = rs.getFloat("Coste");
+				String direccion = rs.getString("Direccion");
+				Date hora = rs.getDate("Hora");
+				int id_repartidor = rs.getInt("Repartidor_Id");
+				pedido = new Pedidos(id,cliente_id,coste,direccion,hora,id_repartidor);
+				LOGGER.fine("Pedido: " + pedido);
+			}
+			rs.close();
+			stmt.close();
+		} catch (SQLException e) {
+			LOGGER.severe("Error al hacer un SELECT");
+			e.printStackTrace();
+		}
+		return pedido;
+		
+	}
 		
 	public List<Menus> searchMenu() {
 		List<Menus> menus = new ArrayList<Menus>();
@@ -435,12 +460,15 @@ public class JDBCManager implements DBManager{
 		Menus menu = new Menus();
 		try {
 			PreparedStatement prep = c.prepareStatement(searchMenuByNombre);
-			prep.setString(1,menu + "");
+			prep.setString(1, plato + "");
 			ResultSet rs = prep.executeQuery();
 			while(rs.next()) {
 				int id = rs.getInt("Id");
 				int precio = rs.getInt("Precio");
-				menu = new Menus (id,plato,precio);
+				menu.setId(id);
+				menu.setPrecio(precio);
+				menu.setPlato(plato);
+			
 			}
 			prep.close();
 		} catch (SQLException e) {
