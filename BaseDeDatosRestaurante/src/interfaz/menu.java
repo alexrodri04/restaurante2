@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
@@ -86,38 +87,45 @@ public class menu {
 		}
 
 		private static void registrarse() {
+			while(true){
 			try {
 				System.out.println("Indique su email:");
 				String email = reader.readLine();
-				System.out.println("Indique su contraseña:");
-				String pass = reader.readLine();
-				MessageDigest md = MessageDigest.getInstance("MD5");
-				md.update(pass.getBytes());
-				byte[] hash = md.digest();
-				System.out.println("Indique su nombre:");
-				String nombre = reader.readLine();
-				System.out.println("Indique su numero de telefono:");
-				int telefono = Integer.parseInt(reader.readLine());
-				System.out.println(userman.getRoles());
-				System.out.println("Indique el id del rol:");
-				int rolId = Integer.parseInt(reader.readLine());
-				Rol rol = userman.getRolById(rolId);
-				Usuario usuario = new Usuario(email, hash, rol);
-				LOGGER.info(usuario.toString());
-				userman.addUsuario(usuario);
-				System.out.println("Te has registrado con éxito");
-				LOGGER.info(usuario.toString());
-				Clientes cliente = new Clientes(usuario.getId(), nombre, telefono, email);
-				dbman.addCliente(cliente);
-			} catch (IOException e) {
-				LOGGER.warning("Error al registrarse");
-				e.printStackTrace();
-			} catch (NoSuchAlgorithmException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+				List<Usuario> users = userman.searchUsuarioList(email);
+				if (!users.isEmpty()) {
+					System.out.println("Email ya en uso, pruebe con otro");
+				}else {
+					System.out.println("Indique su contraseña:");
+					String pass = reader.readLine();
+					MessageDigest md = MessageDigest.getInstance("MD5");
+					md.update(pass.getBytes());
+					byte[] hash = md.digest();
+					System.out.println("Indique su nombre:");
+					String nombre = reader.readLine();
+					System.out.println("Indique su numero de telefono:");
+					int telefono = Integer.parseInt(reader.readLine());
+					System.out.println(userman.getRoles());
+					System.out.println("Indique el id del rol:");
+					int rolId = Integer.parseInt(reader.readLine());
+					Rol rol = userman.getRolById(rolId);
+					Usuario usuario = new Usuario(email, hash, rol);
+					LOGGER.info(usuario.toString());
+					userman.addUsuario(usuario);
+					System.out.println("Te has registrado con éxito");
+					LOGGER.info(usuario.toString());
+					Clientes cliente = new Clientes(usuario.getId(), nombre, telefono, email);
+					dbman.addCliente(cliente);
+					break;
+				}
+				} catch (IOException e) {
+					LOGGER.warning("Error al registrarse");
+					e.printStackTrace();
+				} catch (NoSuchAlgorithmException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 		}
-		
+		}
 		private static void login() throws XPathExpressionException, JAXBException, SAXException, ParserConfigurationException {
 			try {
 				System.out.println("Indique su email:");

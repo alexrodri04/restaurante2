@@ -1,9 +1,25 @@
 package pojos;
 
-public class Cargos {
-	
+import java.io.Serializable;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+
+@XmlRootElement(name = "cargo")
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(propOrder = { "nombre", "jefe_id"})
+public class Cargos implements Serializable{
+
+	private static final long serialVersionUID = 8348912392169638115L;
+	@XmlAttribute
 	private int id;
+	@XmlElement
 	private String nombre;
+	@XmlElement
 	private int jefe_id;
 	
 	public Cargos() {

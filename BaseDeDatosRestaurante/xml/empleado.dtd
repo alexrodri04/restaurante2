@@ -1,0 +1,5 @@
+<!ELEMENT empleado (nombre,salario,cargoId)> 
+<!ATTLIST empleado id CDATA #REQUIRED>
+<!ELEMENT nombre (#PCDATA)> 
+<!ELEMENT salario (#PCDATA) > 
+<!ELEMENT cargoId (#PCDATA)>

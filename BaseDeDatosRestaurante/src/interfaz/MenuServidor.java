@@ -26,6 +26,8 @@ import javax.xml.xpath.XPathExpressionException;
 import org.xml.sax.SAXException;
 
 import jdbc.JDBCManager;
+import jpa.ManagerJPA;
+import jpa.UsuarioManager;
 import logging.MyLogger;
 import jdbc.DBManager;
 
@@ -33,6 +35,7 @@ public class MenuServidor {
 	
 	final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 	private static DBManager dbman = new JDBCManager();
+	private static ManagerJPA userman = new UsuarioManager();
 	private static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 	private final static String[] JEFES_NOMBRES = {"Daniel","Alejandro", "Ignacio"};
 	private final static String[] EMPLEADOS_NOMBRES = {"Paco","Jaime", "Jose"};
@@ -54,6 +57,7 @@ public class MenuServidor {
 		}
 		
 		dbman.connect();
+		userman.connect();
 		if (dbman.searchJefes().isEmpty()) {
 			generartablas();
 		}

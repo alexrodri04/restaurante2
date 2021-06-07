@@ -18,6 +18,7 @@ import logging.MyLogger;
 import pojos.Clientes;
 import pojos.Menus;
 import pojos.Pedidos;
+import pojos.Usuario;
 
 public class MenuCliente {
 	
@@ -35,6 +36,7 @@ public class MenuCliente {
 			e.printStackTrace();
 		}
 		dbman.connect();
+		userman.connect();
 		int respuesta = 0;
 		do {
 			System.out.println("\nElige una opción:");
@@ -42,7 +44,9 @@ public class MenuCliente {
 			System.out.println("2. Modificar informacion del usuario");
 			System.out.println("3. Visualizar Menu");
 			System.out.println("4. Hacer pedido");
-			
+			System.out.println("5. Eliminar cuenta");
+			System.out.println("0. Salir");
+
 
 			try {
 				respuesta=Integer.parseInt(reader.readLine());
@@ -58,7 +62,9 @@ public class MenuCliente {
 					break;
 				case 2:
 					actualizarCliente(usuario);
-					break;
+					System.out.println("Se tiene que reiniciar la app para guardar los cambios....");
+					System.exit(0);
+
 				case 3:
 					mostrarMenu();
 					break;
@@ -66,33 +72,43 @@ public class MenuCliente {
 					añadirAlPedido(usuario);
 					break;
 				case 5: 
-					//can
+					deleteCliente(usuario);
+					respuesta = 0;
+					break;
 			}
  			
 		} while (respuesta != 0);
 		dbman.disconnect();
 		}
 	
-	private static Clientes addCliente(Clientes usuario) {
+	private static void deleteCliente(Clientes usuario) {
 		try {
-			System.out.println("Nombre del cliente:");
-			String nombre = reader.readLine();
-			System.out.println("Telefono: ");
-			int telefono = Integer.parseInt(reader.readLine());
-			System.out.println("Email: ");
-			String email = reader.readLine();
-			usuario = new Clientes(nombre, telefono , email );
-			dbman.addCliente(usuario);
+			System.out.println("Esta seguro que quiere eliminar esta cuenta");
+			System.out.println(usuario);
+			System.out.println("¿Confirmar borrado?(s/n)");
+			String respuesta = reader.readLine();
+			if(respuesta.equalsIgnoreCase("s")) {
+				String nombreCliente = usuario.getNombre();
+				String email = usuario.getEmail();
+				boolean existeCliente = dbman.eliminarCliente(nombreCliente);
+				if(existeCliente) {
+					Usuario user = userman.searchUsuario(email);
+					userman.deleteUsuario(user);
+					System.out.println("El Cliente se ha borrado con éxito");
+				} else {
+					System.out.println("Ha habido un error al intentar eliminar el cliente");
+				}
+			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return usuario;
 	}
 	
 	private static void actualizarCliente(Clientes usuario){
 		try {			
 			String nombre = usuario.getNombre();
+			Usuario user = userman.searchUsuario(usuario.getEmail());
 			System.out.println("Esta actualizando informacion de cliente:");
 			System.out.println(nombre);
 			System.out.println("Nuevo Telefono: ");
@@ -100,7 +116,7 @@ public class MenuCliente {
 			System.out.println("Nuevo Email: ");
 			String email = reader.readLine();
 			dbman.actualizarCliente(nombre, email, telefono);
-			userman.updateUsuario(usuario.getId(), email);
+			userman.updateUsuario(user, email);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -146,7 +162,6 @@ public class MenuCliente {
 						break;
 					}
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 					}
 				}
@@ -155,7 +170,6 @@ public class MenuCliente {
 			direccion = reader.readLine();
 			pedido.setDireccion(direccion);
 			pedido.setCoste(coste);
-			
 			//System.out.println("Indutroduzca la Hora: ");
 			//LocalDate time = LocalDate.now();
 			//hora = LocalDate.parse(time, formattertime);

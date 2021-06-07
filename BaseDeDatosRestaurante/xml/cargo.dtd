@@ -1,0 +1,4 @@
+<!ELEMENT cargo (nombre,jefe_id)> 
+<!ATTLIST empleado id CDATA #REQUIRED>
+<!ELEMENT nombre (#PCDATA)> 
+<!ELEMENT jefe_id (#PCDATA) > 

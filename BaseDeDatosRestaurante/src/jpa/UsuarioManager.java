@@ -62,7 +62,21 @@ public class UsuarioManager implements ManagerJPA{
 		q.setParameter(1, rolId);
 		return (Rol) q.getSingleResult();//Tener cuidado si la id seleccionada no existe
 	}
-
+	
+	@Override
+	public Usuario searchUsuario(String email) {
+		Query q = em.createNativeQuery("SELECT * FROM Usuarios WHERE email = ?", Usuario.class);
+		q.setParameter(1,  email);
+		return (Usuario) q.getResultList().get(0);	
+		}
+	
+	@Override
+	public List<Usuario> searchUsuarioList(String email) {
+		Query q = em.createNativeQuery("SELECT * FROM Usuarios WHERE email = ?", Usuario.class);
+		q.setParameter(1,  email);
+		return  q.getResultList();	
+		}
+	
 	@Override
 	public void addUsuario(Usuario usuario) {
 		em.getTransaction().begin();
@@ -85,15 +99,17 @@ public class UsuarioManager implements ManagerJPA{
 			return null;
 		}
 	}
-	public void updateUsuario(int id, String email) {
-		Usuario UsuarioUpdate = em.find(Usuario.class, id);
-		UsuarioUpdate.setEmail(email);
-		 em.getTransaction().commit();
+	@Override
+	public void updateUsuario(Usuario user, String email) {
+		//Usuario UsuarioUpdate = em.find(Usuario.class, id);
+		em.getTransaction().begin();
+		user.setEmail(email);
+		em.getTransaction().commit();
 	
 	}
-	
-	public void deleteUsuario(int id) {
-		Usuario user = em.find(Usuario.class, id);
+	@Override
+	public void deleteUsuario(Usuario user) {
+		//Usuario user = em.find(Usuario.class, id);
 		em.getTransaction().begin();
 		em.remove(user);
 		em.getTransaction().commit();

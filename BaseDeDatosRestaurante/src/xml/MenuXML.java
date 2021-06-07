@@ -25,10 +25,14 @@ public class MenuXML {
 					String nombre = reader.readLine();
 					if (nombre.equalsIgnoreCase("empleados")) {
 						XML.marshallingEmpleados();
+						System.out.println("Comprobando DTD de Empleados.xml......");
+						DTD.main(null);
 						break;
 					}
 					else if (nombre.equalsIgnoreCase("cargos")){
 						XML.marshallingCargos();
+						System.out.println("Comprobando DTD de Cargo.xml......");
+						DTD.main2(null);
 						break;
 					}
 					}catch(InputMismatchException e) {
@@ -42,7 +46,9 @@ public class MenuXML {
 					String eleccion = reader.readLine();
 					if (eleccion.equalsIgnoreCase("empleados")) {
 						try {
-						XML.unmarshallingEmpleados();
+							System.out.println("Comprobando DTD de Empleados.xml......");
+							DTD.main(null);
+							XML.unmarshallingEmpleados();
 						}catch (Exception e) {
 							System.out.println("para realizar esta operación debe haber realizado una operacion de Marshalling");
 						}
@@ -50,7 +56,9 @@ public class MenuXML {
 					}
 					else if (eleccion.equalsIgnoreCase("cargos")){
 						try {
-						XML.unmarshallingCargos();
+							System.out.println("Comprobando DTD de Cargo.xml......");
+							DTD.main2(null);
+							XML.unmarshallingCargos();
 						}catch(Exception e) {
 							System.out.println("para realizar esta operación debe haber realizado una operacion de Marshalling");
 						}
@@ -59,19 +67,32 @@ public class MenuXML {
 				}
 				break;
 			case 3:
+				System.out.println("Ssobre que tabla desea generar el html: Cargos o Empleados");
+				String nombre = reader.readLine();
+				if (nombre.equalsIgnoreCase("empleados")) {
 				try {
 					XSLT.xsltEmpleado();
 				}catch(Exception e) {
 				System.out.println("Para realizar esta operación debe haber realizado una operacion de Marshalling de Empleado previamente");
-				}
+					}
 				break;
+				}
+				else if (nombre.equalsIgnoreCase("cargos")){
+					try {
+						XSLT.xsltCargo();
+					}catch(Exception e) {
+						System.out.println("Para realizar esta operación debe haber realizado una operacion de Marshalling de Empleado previamente");
+					}
+					break;
+				}
 			case 4: 
 				try {
+					System.out.println("Ejecutando sentencia XPath: empleados[salario>500]");
 					Xpath.main(null);
 				}catch(Exception e) {
 					
 				}
-
+				break;
 			default:
 				System.out.println("Indroduzca un numero valido");
 			}

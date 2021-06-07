@@ -22,7 +22,7 @@ public class Xpath {
     	Document doc = builder.parse("./xml/Empleado.xml");
     	XPathFactory xpathfactory = XPathFactory.newInstance();
     	XPath xpath = xpathfactory.newXPath();
-    	String xPathtxt = "//Empleado[sueldo>500]";
+    	String xPathtxt = "//empleado[salario>500]";
     	XPathExpression expr = xpath.compile(xPathtxt); 
     	Object result = expr.evaluate(doc, XPathConstants.NODESET);
     	NodeList nodes = (NodeList) result; 

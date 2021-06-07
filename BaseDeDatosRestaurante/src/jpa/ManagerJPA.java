@@ -10,7 +10,11 @@ public interface ManagerJPA {
 	void connect();
 
 	void disconnect();
-
+	
+	Usuario searchUsuario(String email);
+	
+	List<Usuario> searchUsuarioList(String email);
+	
 	List<Rol> getRoles();
 
 	Rol getRolById(int rolId);
@@ -21,9 +25,9 @@ public interface ManagerJPA {
 
 	Usuario checkPass(String email, String pass);
 	
-	void updateUsuario(int id, String nombre);
+	void updateUsuario(Usuario user, String nombre);
 	
-	void deleteUsuario(int id);
+	void deleteUsuario(Usuario user);
 	
 }
 
